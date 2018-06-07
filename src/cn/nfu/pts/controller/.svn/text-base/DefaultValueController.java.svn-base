@@ -1,0 +1,61 @@
+package cn.nfu.pts.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+@RequestMapping("/defaultValue")
+public class DefaultValueController extends BaseController{
+
+	/**
+	 * @description:set the default values of template 
+	 * @version:v1.0
+	 * @param request
+	 * @param response
+	 * @param session
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/setdefaultValues.do")
+	@ResponseBody
+	public String setdefaultValues(HttpServletRequest request, HttpServletResponse response ,HttpSession session) throws Exception {
+		
+		String userName = session.getAttribute("userName").toString();
+		if (userName == null) {
+			return "error";
+		}
+		
+		String templateId = request.getParameter("templateId");
+		String defaultValueJson = request.getParameter("defaultValueJson");
+		
+		return String.valueOf(das.setDefaultValues(userName,templateId,defaultValueJson));
+	}
+	
+	/**
+	 * @description:get the default values of template
+	 * @version:v1.0
+	 * @param request
+	 * @param response
+	 * @param session
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/getDefaultValues.do")
+	@ResponseBody
+	public String getDefaultValues(HttpServletRequest request, HttpServletResponse response ,HttpSession session) throws Exception {
+		
+		String userName = session.getAttribute("userName").toString();
+		if (userName == null) {
+			return "error";
+		}
+		
+		String templateId = request.getParameter("templateId");
+		
+		return das.getDefaultValues(userName, templateId);
+	}
+}
