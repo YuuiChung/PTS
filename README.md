@@ -10,9 +10,11 @@ PTS是管理项目进度跟踪的工作流系统，工作由谁处理，处理�
 每个流程中都有定义的角色，这个也是用户根据不同的项目定义的，针对不同的角色用户可以添加不同的人员，这样项目之间和角色之间没有任何影响，权限也更清晰。
 4. 新建和处理问题
 5. 项目流程
-[](/images/1.png)
+![](https://github.com/YuuiChung/PTS/tree/master/WebRoot/images/effect/1.png)
 ## 用户界面
-[](/images/2.png)
-[](/images/3.png)
-[](/images/4.png)
-[](/images/5.png)
+![](https://github.com/YuuiChung/PTS/tree/master/WebRoot/images/effect/2.png)
+![](https://github.com/YuuiChung/PTS/tree/master/WebRoot/images/effect/3.png)
+![](https://github.com/YuuiChung/PTS/tree/master/WebRoot/images/effect/4.png)
+![](https://github.com/YuuiChung/PTS/tree/master/WebRoot/images/effect/5.png)
+## 参考
+[https://github.com/afrous/Cynthia](https://github.com/afrous/Cynthia)
